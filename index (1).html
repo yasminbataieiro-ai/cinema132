@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rog Filmes — O Cinema Elevado à Arte</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-rog">ROG</span><span class="logo-filmes">FILMES</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#em-cartaz">Em Cartaz</a></li>
+        <li><a href="#experiencias">Experiências</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+      </ul>
+      <button class="nav-cta" onclick="openModal('modal-ingressos')">Meus Ingressos</button>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#em-cartaz" onclick="closeMobileMenu()">Em Cartaz</a></li>
+      <li><a href="#experiencias" onclick="closeMobileMenu()">Experiências</a></li>
+      <li><a href="#sobre" onclick="closeMobileMenu()">Sobre</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-gradient"></div>
+      <div class="hero-particles" id="particles"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-eyebrow reveal">TEMPORADA 2025 · 2026</div>
+      <h1 class="hero-headline reveal delay-1">O cinema<br/><em>elevado à arte.</em></h1>
+      <p class="hero-sub reveal delay-2">Tecnologia IMAX. Assentos reclinados premium. Som Dolby Atmos.<br/>Uma experiência que vai além do filme.</p>
+      <div class="hero-actions reveal delay-3">
+        <a href="#em-cartaz" class="btn-primary">Ver Filmes em Cartaz</a>
+        <a href="#experiencias" class="btn-ghost">Experiência IMAX</a>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Rolar</span>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="stats-bar reveal">
+    <div class="stat">
+      <span class="stat-num" data-count="14">0</span>
+      <span class="stat-label">Salas Premium</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num" data-count="4">0</span>
+      <span class="stat-label">Salas IMAX</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num" data-count="2400">0</span>
+      <span class="stat-label">Assentos Reclináveis</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num" data-count="98">0</span><span class="stat-suffix">%</span>
+      <span class="stat-label">Satisfação dos Clientes</span>
+    </div>
+  </section>
+
+  <!-- FILMES EM CARTAZ -->
+  <section class="filmes-section" id="em-cartaz">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Programação</div>
+      <h2 class="section-title">Em Cartaz</h2>
+      <p class="section-sub">Os maiores lançamentos do cinema mundial, com a qualidade que você merece.</p>
+    </div>
+
+    <div class="filtros reveal">
+      <button class="filtro active" data-genre="todos">Todos</button>
+      <button class="filtro" data-genre="acao">Ação</button>
+      <button class="filtro" data-genre="scifi">Sci-Fi</button>
+      <button class="filtro" data-genre="drama">Drama</button>
+      <button class="filtro" data-genre="aventura">Aventura</button>
+      <button class="filtro" data-genre="animacao">Animação</button>
+    </div>
+
+    <div class="filmes-grid" id="filmesGrid">
+      <!-- Renderizado via JS -->
+    </div>
+  </section>
+
+  <!-- EXPERIÊNCIAS -->
+  <section class="experiencias-section" id="experiencias">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Tecnologia</div>
+      <h2 class="section-title">Experiências Únicas</h2>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card reveal">
+        <div class="exp-icon">
+          <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="8" width="40" height="28" rx="3" stroke="currentColor" stroke-width="2"/><path d="M16 36v4M32 36v4M12 40h24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M4 28h40" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 3"/></svg>
+        </div>
+        <h3>IMAX com Laser</h3>
+        <p>Tela de 26 metros de altura, projeção laser 4K e som com 12 canais de áudio. A imersão mais completa do planeta.</p>
+        <div class="exp-tag">4 Salas Disponíveis</div>
+      </div>
+      <div class="exp-card reveal delay-1">
+        <div class="exp-icon">
+          <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/><path d="M24 6v6M24 36v6M6 24h6M36 24h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <h3>Dolby Atmos</h3>
+        <p>Som tridimensional que se move ao seu redor. Cada detalhe sonoro posicionado com precisão milimétrica no espaço.</p>
+        <div class="exp-tag">Todas as Salas Premium</div>
+      </div>
+      <div class="exp-card reveal delay-2">
+        <div class="exp-icon">
+          <svg viewBox="0 0 48 48" fill="none"><path d="M8 36V18l16-10 16 10v18" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><rect x="18" y="26" width="12" height="10" rx="1" stroke="currentColor" stroke-width="2"/><path d="M18 20h4M26 20h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Assentos Reclináveis</h3>
+        <p>Poltronas de couro italiano com reclinação elétrica, aquecimento e espaço para as pernas digno de classe executiva.</p>
+        <div class="exp-tag">Serviço na Poltrona</div>
+      </div>
+      <div class="exp-card reveal delay-3">
+        <div class="exp-icon">
+          <svg viewBox="0 0 48 48" fill="none"><path d="M24 4l5.09 10.26L40 15.82l-8 7.79 1.89 11-9.89-5.2-9.89 5.2L16 23.61l-8-7.79 10.91-1.56L24 4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Lounge VIP</h3>
+        <p>Acesso exclusivo ao lounge com bar premium, cardápio gourmet e sommelier para uma experiência completa antes do filme.</p>
+        <div class="exp-tag">Membros Rog Select</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="sobre-section" id="sobre">
+    <div class="sobre-inner reveal">
+      <div class="sobre-text">
+        <div class="section-eyebrow">Nossa Filosofia</div>
+        <h2 class="section-title">Cinema é arte.<br/>Arte merece palco.</h2>
+        <p>A Rog Filmes nasceu da crença de que o cinema é a mais poderosa das artes contemporâneas. Cada detalhe do nosso espaço — da arquitetura à acústica — foi projetado para elevar essa experiência ao seu máximo potencial.</p>
+        <p>Porque um grande filme merece uma grande tela, um som impecável e uma poltrona onde você possa simplesmente... se perder na história.</p>
+        <a href="#em-cartaz" class="btn-primary" style="margin-top:2rem;display:inline-flex;">Escolha seu Filme</a>
+      </div>
+      <div class="sobre-visual">
+        <div class="sobre-card-stack">
+          <div class="sobre-card c1">
+            <span class="sc-num">14</span>
+            <span class="sc-label">Salas Premium</span>
+          </div>
+          <div class="sobre-card c2">
+            <span class="sc-num">2006</span>
+            <span class="sc-label">Fundada em</span>
+          </div>
+          <div class="sobre-card c3">
+            <span class="sc-num">1M+</span>
+            <span class="sc-label">Espectadores/Ano</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-rog">ROG</span><span class="logo-filmes">FILMES</span>
+        <p>O cinema elevado à arte.</p>
+      </div>
+      <div class="footer-links">
+        <div class="fl-col">
+          <h4>Cinema</h4>
+          <a href="#">Em Cartaz</a>
+          <a href="#">Em Breve</a>
+          <a href="#">Salas IMAX</a>
+        </div>
+        <div class="fl-col">
+          <h4>Experiência</h4>
+          <a href="#">Assentos Premium</a>
+          <a href="#">Lounge VIP</a>
+          <a href="#">Rog Select</a>
+        </div>
+        <div class="fl-col">
+          <h4>Institucional</h4>
+          <a href="#">Sobre Nós</a>
+          <a href="#">Contato</a>
+          <a href="#">Política de Privacidade</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Rog Filmes. Todos os direitos reservados.</p>
+      <p>Classificação indicativa de acordo com a Secretaria Especial da Cultura.</p>
+    </div>
+  </footer>
+
+  <!-- MODAL: SELEÇÃO DE ASSENTOS E CHECKOUT -->
+  <div class="modal-overlay" id="modal-assentos" onclick="handleOverlayClick(event,'modal-assentos')">
+    <div class="modal-glass modal-large" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal('modal-assentos')">✕</button>
+
+      <!-- PASSO 1: ASSENTOS -->
+      <div class="modal-step" id="step-assentos">
+        <div class="modal-header">
+          <div class="modal-eyebrow">Seleção de Assentos</div>
+          <h2 class="modal-title" id="assentoFilmeTitle">—</h2>
+          <p class="modal-sub" id="assentoFilmeSub">—</p>
+        </div>
+
+        <div class="tela-container">
+          <div class="tela-shape"></div>
+          <div class="tela-label">TELA</div>
+        </div>
+
+        <div class="legenda">
+          <div class="leg-item"><div class="leg-box disponivel"></div><span>Disponível</span></div>
+          <div class="leg-item"><div class="leg-box selecionado"></div><span>Selecionado</span></div>
+          <div class="leg-item"><div class="leg-box ocupado"></div><span>Ocupado</span></div>
+          <div class="leg-item"><div class="leg-box vip"></div><span>VIP</span></div>
+        </div>
+
+        <div class="mapa-assentos" id="mapaAssentos"></div>
+
+        <div class="preco-panel">
+          <div class="preco-info">
+            <div class="preco-selecionados">
+              <span id="numSelecionados">0</span> assento(s) selecionado(s)
+            </div>
+            <div class="preco-breakdown" id="precoBreakdown"></div>
+          </div>
+          <div class="preco-total">
+            <span class="preco-label">Total</span>
+            <span class="preco-valor" id="precoTotal">R$ 0,00</span>
+          </div>
+        </div>
+
+        <div class="tipo-ingresso">
+          <h4>Tipo de Ingresso</h4>
+          <div class="tipo-btns">
+            <button class="tipo-btn active" data-tipo="inteira" onclick="setTipo('inteira',this)">
+              <span>Inteira</span><span class="tipo-price" id="price-inteira">R$ 52,00</span>
+            </button>
+            <button class="tipo-btn" data-tipo="meia" onclick="setTipo('meia',this)">
+              <span>Meia-entrada</span><span class="tipo-price" id="price-meia">R$ 26,00</span>
+            </button>
+            <button class="tipo-btn" data-tipo="vip" onclick="setTipo('vip',this)">
+              <span>VIP</span><span class="tipo-price" id="price-vip">R$ 95,00</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button class="btn-ghost-sm" onclick="closeModal('modal-assentos')">Cancelar</button>
+          <button class="btn-primary" id="btnContinuarCheckout" onclick="irParaCheckout()" disabled>Continuar para Pagamento</button>
+        </div>
+      </div>
+
+      <!-- PASSO 2: CHECKOUT -->
+      <div class="modal-step hidden" id="step-checkout">
+        <div class="modal-header">
+          <div class="modal-eyebrow">Pagamento Seguro</div>
+          <h2 class="modal-title">Finalizar Compra</h2>
+        </div>
+
+        <div class="checkout-resumo" id="checkoutResumo"></div>
+
+        <div class="checkout-form">
+          <div class="form-group">
+            <label>Nome Completo</label>
+            <input type="text" placeholder="Como no documento de identidade" id="inputNome" />
+          </div>
+          <div class="form-group">
+            <label>E-mail</label>
+            <input type="email" placeholder="seu@email.com" id="inputEmail" />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>CPF</label>
+              <input type="text" placeholder="000.000.000-00" id="inputCPF" maxlength="14" />
+            </div>
+            <div class="form-group">
+              <label>Telefone</label>
+              <input type="text" placeholder="(00) 00000-0000" id="inputTelefone" maxlength="15" />
+            </div>
+          </div>
+
+          <div class="metodos-pagamento">
+            <h4>Forma de Pagamento</h4>
+            <div class="metodo-grid">
+              <button class="metodo-btn active" data-metodo="cartao" onclick="setMetodo('cartao',this)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+                Cartão
+              </button>
+              <button class="metodo-btn" data-metodo="pix" onclick="setMetodo('pix',this)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 12l10 10 10-10L12 2z"/></svg>
+                PIX
+              </button>
+            </div>
+          </div>
+
+          <div id="cartaoFields">
+            <div class="form-group">
+              <label>Número do Cartão</label>
+              <input type="text" placeholder="0000 0000 0000 0000" id="inputCartao" maxlength="19" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Validade</label>
+                <input type="text" placeholder="MM/AA" id="inputValidade" maxlength="5" />
+              </div>
+              <div class="form-group">
+                <label>CVV</label>
+                <input type="text" placeholder="123" id="inputCVV" maxlength="3" />
+              </div>
+            </div>
+          </div>
+          <div id="pixFields" class="hidden">
+            <div class="pix-info">
+              <div class="pix-icon">◈</div>
+              <p>Após confirmar, um QR Code PIX será gerado para pagamento imediato. O ingresso é liberado em até 2 minutos.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="checkout-total-bar">
+          <div>
+            <div class="ct-label">Total a pagar</div>
+            <div class="ct-valor" id="ctValor">R$ 0,00</div>
+          </div>
+          <button class="btn-primary btn-pay" id="btnPagar" onclick="processarPagamento()">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16.5 10a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z"/><path d="M13 10l-3 3-1.5-1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Confirmar e Pagar
+          </button>
+        </div>
+
+        <div class="modal-actions" style="margin-top:1rem">
+          <button class="btn-ghost-sm" onclick="voltarAssentos()">← Voltar</button>
+        </div>
+      </div>
+
+      <!-- PASSO 3: CONFIRMAÇÃO -->
+      <div class="modal-step hidden" id="step-confirmacao">
+        <div class="confirmacao-content">
+          <div class="conf-icon">
+            <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="28" stroke="#007AFF" stroke-width="2"/><path d="M18 30l9 9 15-18" stroke="#007AFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h2>Compra Confirmada!</h2>
+          <p>Seus ingressos foram enviados para o seu e-mail. Aproveite a sessão!</p>
+          <div class="conf-ticket" id="confTicket"></div>
+          <button class="btn-primary" onclick="closeModal('modal-assentos');resetModal()">Perfeito!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: MEUS INGRESSOS (placeholder) -->
+  <div class="modal-overlay" id="modal-ingressos" onclick="handleOverlayClick(event,'modal-ingressos')">
+    <div class="modal-glass" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal('modal-ingressos')">✕</button>
+      <div class="modal-header">
+        <div class="modal-eyebrow">Minha Conta</div>
+        <h2 class="modal-title">Meus Ingressos</h2>
+      </div>
+      <div class="empty-state">
+        <div class="es-icon">🎬</div>
+        <p>Você ainda não possui ingressos.</p>
+        <a href="#em-cartaz" class="btn-primary" onclick="closeModal('modal-ingressos')">Ver Filmes em Cartaz</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
